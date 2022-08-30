@@ -6,7 +6,9 @@ body{
 }
 
 .box{
-	width: 300px;
+	width: 30%;
+	max-width: 1920px;
+	min-width: 480px;
 	padding: 30px;
 	border-radius: 15px;
 	position: absolute;
@@ -17,16 +19,12 @@ body{
 	text-align: center;
 }
 
-.box h1
-{
+.box h1{
 	color: rgb(0, 0, 0);
-	text-transform: uppercase;
 	font-weight: 700;
 }
 
-.box input[type="text"],.box input[type="password"]
-{
-
+.box input[type="text"],.box input[type="password"]{
 	border: 0;
 	background: none;
 	display: block;
