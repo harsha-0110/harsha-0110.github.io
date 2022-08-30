@@ -5,7 +5,7 @@ function validate() {
         return true;
     }
     else {
-        alert("Login Failed :(\nEnter a valid Username and Password");
+        alert("Login Failed :(\nEnter a valid Username or Password");
         return false;
     }
 }
