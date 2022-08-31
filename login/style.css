@@ -1,7 +1,9 @@
 body{
 	margin:0;
 	padding:0;
-	background-color: rgb(74, 104, 246);
+	background: url('bg.jpg');
+	background-size: cover;
+	align-items: center;
 	font-family: 'Times New Roman';
 }
 
@@ -15,12 +17,12 @@ body{
 	top: 50%;
 	left:50%;
 	transform: translate(-50%, -50%);
-	background: rgba(255, 255, 255);
+	background: rgb(42, 40, 40);
 	text-align: center;
 }
 
 .box h1{
-	color: rgb(0, 0, 0);
+	color: rgb(255, 255, 255);
 	font-weight: 700;
 }
 
@@ -34,7 +36,7 @@ body{
 	padding:14px 10px;
 	width: 220px;
 	outline: none;
-	color: rgb(63, 63, 63);
+	color: rgb(255, 255, 255);
 	border-radius: 12px;
 	transition:0.25px;
 
@@ -52,7 +54,7 @@ body{
 	width: 100px;
 	padding:14px 10px;
 	outline: none;
-	color: rgb(63, 63, 63);
+	color: rgb(255, 255, 255);
 	border-radius: 12px;
 	transition:0.25px;
 	cursor:pointer;
