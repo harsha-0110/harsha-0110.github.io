@@ -1,129 +1,31 @@
 <!DOCTYPE html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: 'Times New Roman';
-  background-color: rgb(255, 255, 255);
-  margin: 0;
-}
+<link rel="stylesheet" href="style.css">
+<script src ="function.js"></script>
 
-* {
-  box-sizing: border-box;
-}
-
-img {
-  vertical-align: middle;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-  margin-left: auto;
-  margin-right: auto;
-  width: 30%;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: black;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: gray;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #000000;
-  font-size: 24px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  font-size: 40px;
-  background-color: #222;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
-</style>
-<body>
+<body onload="showSlides(1)">
 <p style="text-align: center; background-color: #222; padding: 5px; font-size: 40px; color: white;">Samsung Galaxy S22 Ultra</p>
 
 <div class="container">
   <div class="mySlides">
     <div class="numbertext">1 / 4</div>
-    <img src="img 1.jpg" style="width:100%">
+    <img src="img 1.jpg" style="width:100%; border: 5px solid #555;">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">2 / 4</div>
-    <img src="img 2.jpg" style="width:100%">
+    <img src="img 2.jpg" style="width:100%; border: 5px solid #555;">
   </div>
 
   <div class="mySlides">
     <div class="numbertext">3 / 4</div>
-    <img src="img 3.jpg" style="width:100%">
+    <img src="img 3.jpg" style="width:100%; border: 5px solid #555;">
   </div>
     
   <div class="mySlides">
     <div class="numbertext">4 / 4</div>
-    <img src="img 4.jpg" style="width:100%">
+    <img src="img 4.jpg" style="width:100%; border: 5px solid #555;">
   </div>
     
   <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -133,7 +35,7 @@ img {
     <p id="caption"></p>
   </div>
 
-  <div class="row">
+  <div class="row" style="margin-left: 25%;">
     <div class="column">
       <img class="demo cursor" src="img 1.jpg" style="width:80%; border: 5px solid #555;" onclick="currentSlide(1)" alt="Front View">
     </div>
@@ -150,37 +52,382 @@ img {
 </div>
 
 <p style="text-align: center; background-color: #222; padding: 5px; font-size: 40px; color: white;">Specifications</p>
-
-<script>
-let slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
-    
+<table style="margin-left: 10%; font-size: larger; font-weight: bold;">
+  <tr>
+      <td>NETWORK</td>
+      <td>Technology</td>
+      <td>GSM / CDMA / HSPA / EVDO / LTE / 5G</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>2G bands</td>
+      <td>GSM 850 / 900 / 1800 / 1900 - SIM 1 &amp; SIM 2 (Dual SIM model only)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>CDMA 800 / 1900 &amp; TD-SCDMA</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>3G bands</td>
+      <td>HSDPA 850 / 900 / 1700(AWS) / 1900 / 2100</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>CDMA2000 1xEV-DO</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>4G bands</td>
+      <td>1, 2, 3, 4, 5, 7, 8, 12, 13, 17, 18, 19, 20, 25, 26, 28, 32, 38, 39, 40, 41, 66 - International</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>1, 2, 3, 4, 5, 7, 8, 12, 13, 14, 18, 19, 20, 25, 26, 28, 29, 30, 38, 39, 40, 41, 46, 48, 66, 71 - USA</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>5G bands</td>
+      <td>1, 2, 3, 5, 7, 8, 12, 20, 25, 28, 38, 40, 41, 66, 75, 77, 78 SA/NSA/Sub6 - International</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>1, 3, 5, 7, 8, 20, 28, 38, 41, 66, 71, 260, 261 SA/NSA/Sub6/mmWave - USA</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Speed</td>
+      <td>HSPA 42.2/5.76 Mbps, LTE-A (7CA) Cat20 2000/200 Mbps; 5G (5+ Gbps DL)</td>
+  </tr>
+  <tr>
+      <td>LAUNCH</td>
+      <td>Announced</td>
+      <td>2022, February 09</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Status</td>
+      <td>Available. Released 2022, February 25</td>
+  </tr>
+  <tr>
+      <td>BODY</td>
+      <td>Dimensions</td>
+      <td>163.3 x 77.9 x 8.9 mm (6.43 x 3.07 x 0.35 in)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Weight</td>
+      <td>228 g / 229 g (mmWave) (8.04 oz)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Build</td>
+      <td>Glass front (Gorilla Glass Victus+), glass back (Gorilla Glass Victus+), aluminum frame</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>SIM</td>
+      <td>Single SIM (Nano-SIM) or Dual SIM (2 Nano-SIMs + eSIM, dual stand-by)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>IP68 dust/water resistant (up to 1.5m for 30 mins)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Armor aluminum frame with tougher drop and scratch resistance (advertised)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Stylus, 2.8ms latency (Bluetooth integration, accelerometer, gyro)</td>
+  </tr>
+  <tr>
+      <td>DISPLAY</td>
+      <td>Type</td>
+      <td>Dynamic AMOLED 2X, 120Hz, HDR10+, 1750 nits (peak)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Size</td>
+      <td>6.8 inches, 114.7 cm2&nbsp;(~90.2% screen-to-body ratio)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Resolution</td>
+      <td>1440 x 3088 pixels (~500 ppi density)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Protection</td>
+      <td>Corning Gorilla Glass Victus+</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Always-on display</td>
+  </tr>
+  <tr>
+      <td>PLATFORM</td>
+      <td>OS</td>
+      <td>Android 12, One UI 4.1</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Chipset</td>
+      <td>Exynos 2200 (4 nm) - Europe</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Qualcomm SM8450 Snapdragon 8 Gen 1 (4 nm) - ROW</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>CPU</td>
+      <td>Octa-core (1x2.8 GHz Cortex-X2 &amp; 3x2.50 GHz Cortex-A710 &amp; 4x1.8 GHz Cortex-A510) - Europe</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Octa-core (1x3.00 GHz Cortex-X2 &amp; 3x2.40 GHz Cortex-A710 &amp; 4x1.70 GHz Cortex-A510) - ROW</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>GPU</td>
+      <td>Xclipse 920 - Europe</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Adreno 730 - ROW</td>
+  </tr>
+  <tr>
+      <td>MEMORY</td>
+      <td>Card slot</td>
+      <td>No</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Internal</td>
+      <td>128GB 8GB RAM, 256GB 12GB RAM, 512GB 12GB RAM, 1TB 12GB RAM</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>UFS 3.1</td>
+  </tr>
+  <tr>
+      <td>MAIN CAMERA</td>
+      <td>Quad</td>
+      <td>108 MP, f/1.8, 23mm (wide), 1/1.33", 0.8µm, PDAF, Laser AF, OIS</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>10 MP, f/4.9, 230mm (periscope telephoto), 1/3.52", 1.12µm, dual pixel PDAF, OIS, 10x optical zoom</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>10 MP, f/2.4, 70mm (telephoto), 1/3.52", 1.12µm, dual pixel PDAF, OIS, 3x optical zoom</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>12 MP, f/2.2, 13mm, 120˚ (ultrawide), 1/2.55", 1.4µm, dual pixel PDAF, Super Steady video</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Features</td>
+      <td>LED flash, auto-HDR, panorama</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Video</td>
+      <td>8K@24fps, 4K@30/60fps, 1080p@30/60/240fps, 720p@960fps, HDR10+, stereo sound rec., gyro-EIS</td>
+  </tr>
+  <tr>
+      <td>SELFIE CAMERA</td>
+      <td>Single</td>
+      <td>40 MP, f/2.2, 26mm (wide), 1/2.82", 0.7µm, PDAF</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Features</td>
+      <td>Dual video call, Auto-HDR</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Video</td>
+      <td>4K@30/60fps, 1080p@30fps</td>
+  </tr>
+  <tr>
+      <td>SOUND</td>
+      <td>Loudspeaker</td>
+      <td>Yes, with stereo speakers</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>3.5mm jack</td>
+      <td>No</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>32-bit/384kHz audio</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Tuned by AKG</td>
+  </tr>
+  <tr>
+      <td>COMMS</td>
+      <td>WLAN</td>
+      <td>Wi-Fi 802.11 a/b/g/n/ac/6e, dual-band, Wi-Fi Direct, hotspot</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Bluetooth</td>
+      <td>5.2, A2DP, LE</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>GPS</td>
+      <td>Yes, with A-GPS, GLONASS, BDS, GALILEO</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>NFC</td>
+      <td>Yes</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Radio</td>
+      <td>No</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>USB</td>
+      <td>USB Type-C 3.2, USB On-The-Go</td>
+  </tr>
+  <tr>
+      <td>FEATURES</td>
+      <td>Sensors</td>
+      <td>Fingerprint (under display, ultrasonic), accelerometer, gyro, proximity, compass, barometer</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Samsung DeX, Samsung Wireless DeX (desktop experience support)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Bixby natural language commands and dictation</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Samsung Pay (Visa, MasterCard certified)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Ultra Wideband (UWB) support</td>
+  </tr>
+  <tr>
+      <td>BATTERY</td>
+      <td>Type</td>
+      <td>Li-Ion 5000 mAh, non-removable</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Charging</td>
+      <td>Fast charging 45W</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>USB Power Delivery 3.0</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Fast Qi/PMA wireless charging 15W</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>Reverse wireless charging 4.5W</td>
+  </tr>
+  <tr>
+      <td>MISC</td>
+      <td>Colors</td>
+      <td>Phantom Black, White, Burgundy, Green, Graphite, Red, Sky Blue, Bora Purple</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Models</td>
+      <td>SM-S908B, SM-S908B/DS, SM-S908U, SM-S908U1, SM-S908W, SM-S908N, SM-S9080, SM-S908E, SM-S908E/DS</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>SAR</td>
+      <td>1.18 W/kg (head) &nbsp; &nbsp; 0.98 W/kg (body) &nbsp; &nbsp;</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>SAR EU</td>
+      <td>1.05 W/kg (head) &nbsp; &nbsp; 1.58 W/kg (body) &nbsp; &nbsp;</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Price</td>
+      <td>₹ 92,299 / $ 779.99 / £ 921.00 / € 990.00 / C$ 1,177.99</td>
+  </tr>
+  <tr>
+      <td>TESTS</td>
+      <td>Performance</td>
+      <td>AnTuTu: 968359 (v9)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>GeekBench: 3657 (v5.1)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td></td>
+      <td>GFXBench: 37fps (ES 3.1 onscreen)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Display</td>
+      <td>Contrast ratio: Infinite (nominal)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Camera</td>
+      <td>Photo&nbsp;/&nbsp;Video</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Loudspeaker</td>
+      <td>-27.3 LUFS (Good)</td>
+  </tr>
+  <tr>
+      <td></td>
+      <td>Battery life</td>
+      <td>Endurance rating 108h</td>
+  </tr>
+</table>
 </body>
 </html>
