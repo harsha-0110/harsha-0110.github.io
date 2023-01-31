@@ -19,10 +19,16 @@
         if (this.readyState == 4 && this.status == 200) {
           var data = JSON.parse(this.responseText);
           var temp = parseFloat(data.field1).toFixed(1);
+          var tempSpan = document.getElementById("temp");
+          tempSpan.innerHTML = temp + "°C";
+          if (temp < 20) {
+            tempSpan.style.color = "green";
+          } else {
+            tempSpan.style.color = "red";
+          }
           var humidity = parseFloat(data.field2).toFixed(1);
-          document.getElementById("temp").innerHTML = temp + "°C";
           document.getElementById("humidity").innerHTML = humidity + "%";
-          if (temp > 30) {
+          if (temp > 20) {
             alert("Fire detected! Temperature is above 20°C: " + temp + "°C");
           }
         }
@@ -31,7 +37,7 @@
       xhttp.send();
     }
     getData();
-    setInterval(getData, 10000);
+    setInterval(getData, 60000);
   </script>
 </body>
 </html>
