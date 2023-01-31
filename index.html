@@ -1,22 +1,37 @@
 <!DOCTYPE html>
-
-<html manifest="cache.manifest" lan="en" and dir="Itr">
-
-	<head>
-		<meta charset="utf-8">
-		<title>Welcome Page</title>
-		<link rel="stylesheet" href="style.css">
-		<script src ="login.js"></script>
-	</head>
-
-	<body>
-		<form class="box" onsubmit="return validate()" action="post_login.html" method="get">
-			<h1>Welcome to my Github Page</h1>
-			<h2 >You can find my projects below</h2>
-			<button type="submit" formaction="login/index.html">Login Page</button>
-			<button type="submit" formaction="product/index.html">Product Page</button>
-		</form>
-
-	</body>
-
+<html>
+<head>
+  <title>Fire Detector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Fire Detector Status</h1>
+    <div class="data">
+      <div class="temp">Temperature: <span id="temp">Loading...</span></div>
+      <div class="humidity">Humidity: <span id="humidity">Loading...</span></div>
+    </div>
+  </div>
+  <script>
+    function getData() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var data = JSON.parse(this.responseText);
+          var temp = parseFloat(data.field1).toFixed(1);
+          var humidity = parseFloat(data.field2).toFixed(1);
+          document.getElementById("temp").innerHTML = temp + "°C";
+          document.getElementById("humidity").innerHTML = humidity + "%";
+          if (temp > 30) {
+            alert("Fire detected! Temperature is above 20°C: " + temp + "°C");
+          }
+        }
+      };
+      xhttp.open("GET", "https://api.thingspeak.com/channels/2002635/feeds/last.json", true);
+      xhttp.send();
+    }
+    getData();
+    setInterval(getData, 10000);
+  </script>
+</body>
 </html>
