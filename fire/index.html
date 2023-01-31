@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fire Detector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Fire Detector Status</h1>
+    <div class="data">
+      <div class="temp">Temperature: <span id="temp">Loading...</span></div>
+      <div class="humidity">Humidity: <span id="humidity">Loading...</span></div>
+    </div>
+  </div>
+  <script>
+    function getData() {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var data = JSON.parse(this.responseText);
+          var temp = parseFloat(data.field1).toFixed(1);
+          var humidity = parseFloat(data.field2).toFixed(1);
+          document.getElementById("temp").innerHTML = temp + "°C";
+          document.getElementById("humidity").innerHTML = humidity + "%";
+          if (temp > 30) {
+            alert("Fire detected! Temperature is above 20°C: " + temp + "°C");
+          }
+        }
+      };
+      xhttp.open("GET", "https://api.thingspeak.com/channels/2002635/feeds/last.json", true);
+      xhttp.send();
+    }
+    getData();
+    setInterval(getData, 10000);
+  </script>
+</body>
+</html>
