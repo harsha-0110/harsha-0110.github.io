@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PS4 Payload Sender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>PS4 Payload Sender</h1>
+        <label for="ip">PS4 IP Address:</label>
+        <input type="text" id="ip" placeholder="Enter PS4 IP">
+        
+        <label for="port">Port:</label>
+        <input type="text" id="port" placeholder="Enter Port (default: 9020)">
+
+        <label for="payload">Select Payload:</label>
+        <input type="file" id="payload">
+
+        <button id="sendPayload">Send Payload</button>
+        
+        <button id="installApp" style="display:none;">Install App</button>
+        
+        <button id="toggleTheme">Toggle Light/Dark Mode</button>
+    </div>
+
+    <script src="service-worker.js"></script>
+</body>
+</html>
