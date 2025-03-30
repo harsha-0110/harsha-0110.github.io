@@ -56,19 +56,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const url = `http://${ip}:${port}`;
-        getPayload(file, (req) => {
-            if ((req.status === 200 || req.status === 304) && req.response) {
-              sendPayload(payloadUrl, req.response, (req) => {
-                if (req.status === 200) {
-                    alert("Payload Sent Successfully!");
-                } else {
-                    alert(`Error: ${req.status} ${req.statusText}`);
-                }
-              });
-            }
-        });
 
-        /*const reader = new FileReader();
+        const reader = new FileReader();
         reader.onload = function (event) {
             const data = event.target.result;
             sendPayload(url, data, (req) => {
@@ -80,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         };
 
-        reader.readAsArrayBuffer(file);*/
+        reader.readAsArrayBuffer(file);
     });
 
     // Install App as PWA
