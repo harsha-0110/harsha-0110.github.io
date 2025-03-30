@@ -2,7 +2,7 @@
     "name": "PS4 Payload Sender",
     "short_name": "PS4Sender",
     "description": "Send payloads to your PS4 from the web!",
-    "start_url": "/",
+    "start_url": "/payload",
     "display": "standalone",
     "background_color": "#1e1e1e",
     "theme_color": "#000000",
